@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<title>STUDENT REGISTRATION FORM </title>
+</head>
+
+<style>
+body
+{
+background-color:lavender;
+border:solid black 5px;
+}
+
+</style>
+
+<center>
+<h1 onmouseover="style.color='darkorange'" onmouseout="style.color=''"> !*!*!  WELCOME  !*!*!</h1>
+
+<marquee direction="left" scrollamount="20">
+
+<h1 onmouseover="style.color='red'" onmouseout="style.color='blue'">******** ADDMISSION ENQUIRY FORM ********</h1>
+
+</marquee>
+
+<img src="https://images.shiksha.com/mediadata/images/1675674064phpxJjgKZ.jpeg"alt="custom_html_banner1" width="100%">
+<h1>-------- Registration --------</h1>
+</center>
+<script>
+function message(){
+alert("Use capital letters only");
+}
+function show2()
+{
+alert("Use Digits only");
+}
+function show(e)
+{
+  with(document.forms.frml)
+{
+  if(e==1)
+{
+  
+  opl[0].text='CO'
+  opl[0].value=1
+  opl[1].text='CE'
+  opl[1].value=2
+
+  opl[2].text='ME'
+  opl[2].value=3
+
+  opl[3].text='EE'
+  opl[3].value=4
+}
+  if(e==2)
+{
+ 
+  opl[0].text='COMPUTER ENGG.'
+  opl[0].value=1
+  opl[1].text='CIVIL ENGG'
+  opl[1].value=2
+  opl[2].text='MECHANICAL ENGG'
+  opl[2].value=3
+  opl[3].text='ELECTRICAL ENGG'
+  opl[3].value=4
+      }
+   }
+}
+
+img_array=new Array('https://www.navsahyadri.edu.in/assets/img/gallery/Avishkar18/avk182.jpg','https://www.campusoption.com/images/colleges/gallery/14_12_16_100726_eve.jpg','https://www.vidyavision.com/CollegeUploads/Photos/2017-15-12-10-40-31_l8.jpg','https://content.jdmagicbox.com/comp/pune/i4/020pxx20.xx20.180724205518.k2i4/catalogue/beeurban-youth-hostel-karve-nagar-hingne-budrukh-pune-hostels-t9x7p1kva0.jpg','https://www.campusoption.com/images/colleges/gallery/14_12_16_100753_sports.jpg')
+
+img=0;
+function displayImg(num)
+{
+img=img+num;
+if(img>img_array.length-1)
+{
+img=0;
+}
+if(img < 0)
+{
+  img=img_array.length-1;
+ }
+
+document.Slide.src=img_array[img];
+}
+function show1()
+{
+alert("your response has been submitted");
+}
+function openWindow()
+{  
+  window.open("https://www.coep.org.in/"," ","left=10,top=20,width=200,height=100");
+}
+</script>
+<body>
+ <form name ="frml" action="" method="post">
+<center>
+Name of Student:
+<br><input type="text" value=""  onmouseout="message()" onblur="validate()" id="fname"><br>
+ <br> Mobile No:
+<br><input type="text" value="" onmouseout="show2()"><br>
+ <br>Password:
+<br><input type="password" id="pwd" name="pwd" minlength="8" >
+<br>
+
+<br> Education:
+<br>
+<input type="radio" name="branches" checked="true" value=1 
+onclick="show(this.value)">Diploma
+<input type="radio" name="branches" value=2 onclick="show(this.value)">Degree
+<br>
+
+<p>
+
+   <select name="opl" size="4">
+   <option Value=1>CO
+   <option Value=2>CE
+    <option Value=3>ME
+    <option Value=4>EE
+   
+   
+</select>
+<br>
+
+<br>Gender: <input type="radio" name="q1" value="yes">Male
+           <input type="radio" name="q1" value="no">Female
+
+<br>
+</center>
+<br>
+<img src="C:\Users\DELL\Downloads\navsayadhri.jpg" width="1200" height="600" name="Slide"/>
+<br>
+<br>
+<center>
+<input type="button" value="Previous" onclick="displayImg(-1)">
+<input type="button" value="Next" onclick="displayImg(1)">
+</center>
+<br>
+<br>
+<center>
+Comment....<br>
+<textarea name="comment1" cols="50" rows="10">
+Enter your feedback.....
+</textarea>
+<br>
+<br>
+
+<input type="Submit" Value="Submit" onclick="show1()">
+
+<br>
+
+<h3>If you want to more information about college go to the below website</h3>
+
+<input type="button" value="Website" onclick="openWindow()">
+</center>
+
+</form>
+
+</body>
+</html>
